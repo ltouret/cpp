@@ -5,14 +5,18 @@
 
 class contact
 {
-	public:
+	private:
 
-		std::string fields[11]; 
-		int		init;
-		contact(void); // how the fuck do you check if this contact exists
+		std::string	fields[11]; 
+		int			init;
+
+	public:
+		bool	is_init(void);
+		contact(void);
 		void	add(void);
 		//void	search(void);
-		//void	show_four(void);
-		//void	show_all(int index);
+		void	show_four(int index);
+		void	show_all(void);
 };
+
 #endif
