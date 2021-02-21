@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/21 14:42:55 by ltouret           #+#    #+#              #
-#    Updated: 2021/02/21 14:42:57 by ltouret          ###   ########.fr        #
+#    Created: 2021/02/21 14:42:18 by ltouret           #+#    #+#              #
+#    Updated: 2021/02/21 14:42:22 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@
 
 SHELL		= /bin/sh
 
-NAME		= phonebook
+NAME		= megaphone
 
-SRCS		= phonebook.cpp main.cpp
+SRCS		= megaphone.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
