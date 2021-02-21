@@ -6,7 +6,7 @@
 #    By: frdescam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/08 17:53:33 by frdescam          #+#    #+#              #
-#    Updated: 2021/02/17 19:45:58 by ltouret          ###   ########.fr        #
+#    Updated: 2021/02/21 14:24:50 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@
 
 SHELL		= /bin/sh
 
-NAME		= a.out
+NAME		= phonebook
 
-SRCS		= phonebook.cpp
+SRCS		= phonebook.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

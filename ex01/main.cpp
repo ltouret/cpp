@@ -44,7 +44,7 @@ int		main()
 				if (j < 2)
 					std::cout << "|";
 			}
-			std::cout << std::endl << std::endl;
+			std::cout << std::endl;
 			j = -1;
 			while (foo[++j].is_init() && j < 8)
 			{
