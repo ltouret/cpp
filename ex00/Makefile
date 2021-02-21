@@ -6,7 +6,7 @@
 #    By: frdescam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/08 17:53:33 by frdescam          #+#    #+#              #
-#    Updated: 2021/02/17 19:44:51 by ltouret          ###   ########.fr        #
+#    Updated: 2021/02/21 14:20:56 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 SHELL		= /bin/sh
 
-NAME		= a.out
+NAME		= megaphone
 
 SRCS		= megaphone.cpp
 
