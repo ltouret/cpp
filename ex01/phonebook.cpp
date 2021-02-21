@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include "phonebook.hpp"
 
-contact::contact(void) // how to check if contact exists
+contact::contact(void)
 {
 	init = 0;
 }
@@ -17,9 +17,11 @@ bool	contact::is_init(void)
 
 void	contact::add(void)
 {
-	this->init = 1; // how to check if contact exists
 	int	i;
-	std::string field_name[11] = // send dis bs to class contact
+
+	i = -1;
+	this->init = 1;
+	std::string field_name[11] =
 	{"first name",
 	"last name",
 	"nickname",
@@ -32,28 +34,17 @@ void	contact::add(void)
 	"underwear color",
 	"darkest secret"};
 
-	i = -1;
 	while (++i < 11)
 	{
 		std::cout << "Please add the " << field_name[i] << " of the contact" << std::endl;
-		std::getline(std::cin, this->fields[i]); // use dis or spaces
-		//std::cin >> this->fields[i];
+		std::getline(std::cin, this->fields[i]);
 	}
-	//std::cout << "You entered this contact info:" << std::endl; 
-	//std::cout << this->fields[0] << std::endl;
 }
-
-/*
-void	contact::search(void)
-{
-
-}
-*/
 
 void	contact::show_four(int index)
 {
 	int			i;
-	std::string	field_name[3] = // send dis bs to class contact
+	std::string	field_name[3] =
 	{"first name",
 	"last name",
 	"nickname"};
@@ -75,7 +66,7 @@ void	contact::show_four(int index)
 void	contact::show_all(void)
 {
 	int	i;
-	std::string field_name[11] = // send dis bs to class contact
+	std::string field_name[11] =
 	{"first name",
 	"last name",
 	"nickname",
@@ -90,7 +81,5 @@ void	contact::show_all(void)
 
 	i = -1;
 	while (++i < 11)
-	{
 		std::cout << field_name[i] << ": " << this->fields[i] << std::endl; 
-	}
 }

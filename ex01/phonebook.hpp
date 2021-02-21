@@ -14,7 +14,6 @@ class contact
 		bool	is_init(void);
 		contact(void);
 		void	add(void);
-		//void	search(void);
 		void	show_four(int index);
 		void	show_all(void);
 };

@@ -12,17 +12,14 @@ int		main()
 	int			i;
 
 	i = 0;
-	//while (foo[++i].init) // dis bs works when creating contacts, just prints if exists
-	//	std::cout << "yooo" << std:endl;
 	std::cout << "Welcome to my awesome phonebook." << std::endl;
-
 	while (command != "EXIT")
 	{
-	std::cout << "Please enter ADD to add a contact, search to search a contact and EXIT to exit." << std::endl;
-	std::getline(std::cin, command);
-		if (command == "ADD") // add
+		std::cout << "Please enter ADD to add a contact, search to search a contact and EXIT to exit." << std::endl;
+		std::getline(std::cin, command);
+		if (command == "ADD")
 		{
-			if (i > 6)
+			if (i > 7)
 				std::cout << "Already have 8 contacts" << std::endl;
 			else
 			{
@@ -30,12 +27,12 @@ int		main()
 				std::cout << "Contact added" << std::endl;
 			}
 		}
-		else if (command == "SEARCH") // search
+		else if (command == "SEARCH")
 		{
 			int	j;
 
 			j = -1;
-			std::string field_name[3] = // send dis bs to class contact
+			std::string field_name[3] =
 			{"first name",
 			"last name",
 			"nickname"};
@@ -47,27 +44,42 @@ int		main()
 				if (j < 2)
 					std::cout << "|";
 			}
-			std::cout << std::endl;
+			std::cout << std::endl << std::endl;
 			j = -1;
-			while (foo[++j].is_init()) // dis bs works when creating contacts, just prints if exists
+			while (foo[++j].is_init() && j < 8)
 			{
-				//std::cout << std::setw(10) << "index" << j << std::endl;
 				foo[j].show_four(j);
 			}
-			// add here to ask what index and then show all of that index
-			while (strchr("12345678", command[0]) == 0) //use some bs with string command[0] will break if a4
+			while (true)
 			{
-				int	num;
+				int			num;
 
-				std::cout << "Please enter an index to show" << std::endl;
+				num = -1;
+				while (foo[++num].is_init() == 0);
+				if (num == 8)
+					{
+						std::cout << "No contacts added, please add some before searching." << std::endl;
+						break;
+					}
+				std::cout << "Please enter an index to show, from 0 - 7" << std::endl;
 				std::getline(std::cin, command);
+				if (command != "0" && command != "1" && command != "2" &&
+						command != "3" && command != "4" && command != "5" &&
+						command != "6" && command != "7")
+				{
+					std::cout << "Please enter a correct index" << std::endl;
+					continue;
+				}
 				num = std::stoi(command);
-				//std::cout << "got it " << j << std::endl;
-				foo[num].show_all(); // add protection if doenst exist and more than 8
+				if (foo[num].is_init() == 0)
+				{
+					std::cout << "Please enter a correct index" << std::endl;
+					continue;
+				}
+				foo[num].show_all();
+				break;
 			}
 		}
-		else if (command == "EXIT") // exit
-			return 0;
 	}
 	return 0;
 }
