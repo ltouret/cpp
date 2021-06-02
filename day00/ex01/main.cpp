@@ -1,9 +1,19 @@
-//header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/02 19:36:35 by ltouret           #+#    #+#             */
+/*   Updated: 2021/06/02 19:42:42 by ltouret          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
 #include <iomanip>
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
 int		main()
 {
@@ -15,7 +25,7 @@ int		main()
 	std::cout << "Welcome to my awesome phonebook." << std::endl;
 	while (command != "EXIT")
 	{
-		std::cout << "Please enter ADD to add a contact, search to search a contact and EXIT to exit." << std::endl;
+		std::cout << "Please enter ADD to add a contact, SEARCH to search a contact and EXIT to exit." << std::endl;
 		std::getline(std::cin, command);
 		if (command == "ADD")
 		{

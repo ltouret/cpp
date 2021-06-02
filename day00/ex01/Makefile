@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:42:55 by ltouret           #+#    #+#              #
-#    Updated: 2021/02/21 14:42:57 by ltouret          ###   ########.fr        #
+#    Updated: 2021/06/02 19:41:56 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL		= /bin/sh
 
 NAME		= phonebook
 
-SRCS		= phonebook.cpp main.cpp
+SRCS		= Contact.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

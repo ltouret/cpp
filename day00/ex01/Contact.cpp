@@ -1,9 +1,19 @@
-//header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/02 19:36:47 by ltouret           #+#    #+#             */
+/*   Updated: 2021/06/02 19:42:13 by ltouret          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
 #include <ctype.h>
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
 contact::contact(void)
 {
