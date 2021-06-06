@@ -6,11 +6,12 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 19:36:35 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/06 15:55:43 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/06 16:42:07 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include <iomanip>
 #include "Contact.hpp"
@@ -80,7 +81,7 @@ int		main()
 					std::cout << "Please enter a correct index" << std::endl;
 					continue;
 				}
-				num = std::stoi(command);
+				num = atoi(command.c_str());
 				if (foo[num].is_init() == 0)
 				{
 					std::cout << "Please enter a correct index" << std::endl;

@@ -6,11 +6,12 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 17:09:04 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/05 19:01:23 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/06 16:26:15 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
