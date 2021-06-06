@@ -6,12 +6,12 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 19:36:35 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/02 19:42:42 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/06 15:55:43 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <iomanip>
 #include "Contact.hpp"
 
