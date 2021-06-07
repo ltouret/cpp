@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/06/06 16:01:53 by ltouret          ###   ########.fr        #
+#    Updated: 2021/06/07 19:20:32 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@
 
 SHELL		= /bin/sh
 
-NAME		= human
+NAME		= fight
 
-SRCS		= Brain.cpp Human.cpp main.cpp
+SRCS		= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
