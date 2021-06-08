@@ -6,11 +6,10 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:50:22 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/07 19:16:35 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/08 14:33:44 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string name, Weapon &weap)

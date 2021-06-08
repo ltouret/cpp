@@ -6,11 +6,10 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:50:22 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/07 19:19:34 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/08 14:33:21 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "HumanB.hpp"
 
 HumanB::HumanB(std::string name)

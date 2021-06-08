@@ -6,11 +6,10 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:38:58 by ltouret           #+#    #+#             */
-/*   Updated: 2021/06/07 19:21:22 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/06/08 14:30:09 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
