@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 23:53:45 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 00:34:45 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(std::string Name):
-ClapTrap(Name + "_clap_name"),
+ClapTrap(Name),
 ScavTrap(Name),
 FragTrap(Name)
 {
+	this->ClapTrap::Name += "_clap_name";
 	this->Name = Name;
 	this->Hit_points = this->FragTrap::Hit_points;
 	this->Energy_points = this->ScavTrap::Energy_points;
@@ -34,20 +35,6 @@ DiamondTrap::~DiamondTrap(void)
 
 void	DiamondTrap::whoAmI(void) const
 {
-	std::cout << "Is this DiamondTrap " << this->Name << " or is it " << ClapTrap::Name << " ?" << std::endl;
+	std::cout << "DiamondTrap Name: " << this->Name << " and ClapTrap Name: " << ClapTrap::Name << std::endl;
 	return ;
 }
-
-/*
-void	ScavTrap::attack(std::string const & target) const
-{
-	std::cout << "ScavTrap " << this->Name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;
-	return ;
-}
-
-void	ScavTrap::guardGate(void) const
-{
-	std::cout << "ScavTrap " << this->Name << " activated gate keeper mode!" << std::endl;
-	return ;
-}
-*/

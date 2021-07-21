@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:29:17 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 19:15:39 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 00:47:37 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -67,5 +68,28 @@ int	main(void)
 	stackFrag.beRepaired(300);
 	stackFrag.beRepaired(-10);
 	stackFrag.highFivesGuys();
+	std::cout << std::endl;
+
+	DiamondTrap	*heapDia;
+	DiamondTrap	stackDia("Ocean");
+
+	heapDia= new DiamondTrap("Sea");
+	std::cout << std::endl;
+	heapDia->attack("Sapo");
+	heapDia->takeDamage(300);
+	heapDia->takeDamage(-10);
+	heapDia->guardGate();
+	heapDia->highFivesGuys();
+	heapDia->whoAmI();
+	delete(heapDia);
+	std::cout << std::endl;
+
+	stackDia.attack("Rana");
+	stackDia.beRepaired(300);
+	stackDia.beRepaired(-10);
+	stackDia.guardGate();
+	stackDia.highFivesGuys();
+	stackDia.whoAmI();
+	std::cout << std::endl;
 	return (0);
 }
