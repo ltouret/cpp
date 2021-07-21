@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:29:17 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 18:44:54 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/21 19:15:39 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	main(void)
 	std::cout << std::endl;
 
 	ScavTrap	*number_one;
-	ScavTrap	number_two("beta");
+	ScavTrap	number_two("alpha");
 
-	number_one = new ScavTrap("alpha");
+	number_one = new ScavTrap("beta");
 	std::cout << std::endl;
 	number_one->attack("Bob");
 	number_one->takeDamage(300);

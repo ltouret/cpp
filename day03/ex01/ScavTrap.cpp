@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 18:02:50 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/21 19:27:45 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ ClapTrap(Name)
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap " << this->Name << " just died!" << std::endl;
+	return ;
+}
+
+void	ScavTrap::attack(std::string const & target) const
+{
+	std::cout << "ScavTrap " << this->Name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;
 	return ;
 }
 
