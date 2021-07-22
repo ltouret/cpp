@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 18:14:44 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 16:52:38 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@
 class FragTrap : public ClapTrap
 {
 public:
+	FragTrap(void);
 	FragTrap(std::string Name);
+	FragTrap(FragTrap const &to_cpy);
 	~FragTrap(void);
-	void	highFivesGuys(void) const;
+	FragTrap	&operator=(FragTrap const &to_cpy);
+	void		highFivesGuys(void) const;
 };
 
 #endif
