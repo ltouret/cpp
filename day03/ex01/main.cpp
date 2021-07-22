@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:29:17 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 19:30:10 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 16:22:03 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ int	main(void)
 	number_two.beRepaired(300);
 	number_two.beRepaired(-10);
 	number_two.guardGate();
+	return (0);
 }

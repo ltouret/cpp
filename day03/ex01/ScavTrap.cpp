@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/22 15:54:34 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 17:02:45 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &to_cpy)
 		this->Energy_points = to_cpy.Energy_points;
 		this->Attack_damage = to_cpy.Attack_damage;
 	}
-	std::cout << "ASSIGNATION ClapTrap " << this->Name << " is alive!" << std::endl;
+	std::cout << "ASSIGNATION ScavTrap " << this->Name << " is alive!" << std::endl;
 	return (*this);
 }
 
