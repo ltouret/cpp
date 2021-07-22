@@ -6,12 +6,21 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 11:12:50 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 12:28:20 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	this->Name = "Unknown";
+	this->Hit_points = 10;
+	this->Energy_points = 10;
+	this->Attack_damage = 0;
+	std::cout << "DEFAULT ClapTrap " << this->Name << " is alive!" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string Name)
 {
@@ -20,6 +29,26 @@ ClapTrap::ClapTrap(std::string Name)
 	this->Energy_points = 10;
 	this->Attack_damage = 0;
 	std::cout << "ClapTrap " << this->Name << " is alive!" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const& to_cpy)
+{
+	std::cout << "COPY ClapTrap " << to_cpy.Name << " is alive!" << std::endl;
+	if (this != &to_cpy)
+		*this = to_cpy;
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap const &to_cpy)
+{
+	if (this != &to_cpy)
+	{
+		this->Name = to_cpy.Name;
+		this->Hit_points = to_cpy.Hit_points;
+		this->Energy_points = to_cpy.Energy_points;
+		this->Attack_damage = to_cpy.Attack_damage;
+	}
+	std::cout << "ASSIGNATION ClapTrap " << this->Name << " is alive!" << std::endl;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap(void)

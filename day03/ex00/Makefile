@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/07/20 18:23:33 by ltouret          ###   ########.fr        #
+#    Updated: 2021/07/22 11:56:11 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 SHELL		= /bin/sh
 
-NAME		= claptrap
+NAME		= ex00
 
 SRCS		= ClapTrap.cpp main.cpp
 
@@ -25,7 +25,7 @@ CPPC		= clang++
 
 RM			= rm -f
 
-CPPFLAGS	= -Wall -Wextra -Werror
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all:	${NAME}
 
