@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:29:17 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/22 00:47:37 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 17:30:39 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	main(void)
 
 	DiamondTrap	*heapDia;
 	DiamondTrap	stackDia("Ocean");
+	DiamondTrap	who;
 
 	heapDia= new DiamondTrap("Sea");
 	std::cout << std::endl;
@@ -90,6 +91,7 @@ int	main(void)
 	stackDia.guardGate();
 	stackDia.highFivesGuys();
 	stackDia.whoAmI();
+	who.whoAmI();
 	std::cout << std::endl;
 	return (0);
 }

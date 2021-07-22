@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/21 23:33:08 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 17:18:43 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	private:
 	std::string Name;
 public:
+	DiamondTrap(void);
 	DiamondTrap(std::string Name);
+	DiamondTrap(DiamondTrap const &to_cpy);
 	~DiamondTrap(void);
-	void	whoAmI(void) const;
+	DiamondTrap	&operator=(DiamondTrap const &to_cpy);
+	void		whoAmI(void) const;
 };
 
 #endif

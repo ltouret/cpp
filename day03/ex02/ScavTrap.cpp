@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/07/22 17:03:52 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/07/22 17:37:48 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(void)
 	this->Hit_points = 100;
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
-	std::cout << "DEFAULT ScavTrap" << this->Name << " is alive!" << std::endl;
+	std::cout << "DEFAULT ScavTrap " << this->Name << " is alive!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string Name):
