@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/07/22 17:53:42 by ltouret          ###   ########.fr        #
+#    Updated: 2021/07/24 13:16:33 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL		= /bin/sh
 
 NAME		= ex00
 
-SRCS		= main.cpp
+SRCS		= ClassWrongCat.cpp ClassWrongAnimal.cpp ClassDog.cpp ClassCat.cpp ClassAnimal.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
