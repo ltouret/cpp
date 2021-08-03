@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/03 18:40:58 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/03 19:40:53 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,8 @@ void				Character::equip(AMateria *m)
 
 void				Character::unequip(int idx)
 {
-	//std::cout << "une "<< idx << std::endl;
 	if (idx >= 0 && idx < 4)
 	{
-		//std::cout << idx << std::endl;
 		if (this->inventory[idx] != NULL)
 			this->inventory[idx] = NULL;
 	}
@@ -90,10 +88,8 @@ void				Character::unequip(int idx)
 
 void				Character::use(int idx, ICharacter &target)
 {
-	//std::cout << idx << std::endl;
 	if (idx >= 0 && idx < 4)
 	{
-		//std::cout << "use " << idx << std::endl;
 		if (this->inventory[idx] != NULL)
 			this->inventory[idx]->use(target);
 	}

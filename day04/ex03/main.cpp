@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 12:22:58 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/03 18:39:43 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/03 19:40:16 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ int main(void)
 
 	me->use(0, *bob);
 	me->use(1, *bob);
-	//me->unequip(4);
 
-	delete tmp1;
 	delete bob;
 	delete me;
 	delete src;
