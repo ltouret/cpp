@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/02 17:49:12 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/03 18:08:09 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,17 @@
 
 AMateria::AMateria(void)
 {
-	std::cout << "DEFAULT constructor of AMateria class called"<< std::endl;
 	return ;
 }
 
 AMateria::AMateria(std::string const &type)
 {
 	this->type = type;
-	std::cout << "Constructor of AMateria class called, type: "<< this->type << std::endl;
 	return ;
 }
 
 AMateria::AMateria(AMateria const& to_cpy)
 {
-	std::cout << "COPY constructor of AMateria class called, type: " << to_cpy.type  << std::endl;
 	if (this != &to_cpy)
 		*this = to_cpy;
 	return ;
@@ -36,7 +33,6 @@ AMateria::AMateria(AMateria const& to_cpy)
 
 AMateria::~AMateria(void)
 {
-	std::cout << "AMateria class destructor called, bye " << this->type << std::endl;
 	return ;
 }
 
@@ -44,7 +40,6 @@ AMateria			&AMateria::operator=(AMateria const &to_cpy)
 {
 	if (this != &to_cpy)
 		this->type = to_cpy.type;
-	std::cout << "ASSIGNATION constructor of AMateria class called, type: " << this->type << std::endl;
 	return (*this);
 }
 
@@ -59,7 +54,7 @@ AMateria			*AMateria::clone(void) const
 	return NULL;
 }
 
-void				AMateria::use(ICharacter& target)
+void				AMateria::use(ICharacter &target)
 {
 	(void)target;
 	std::cout << "this wont be printed..." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/02 23:03:29 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/03 18:40:58 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 Character::Character(void):name("Random")
 {
-	std::cout << "default constructor of Character class called"<< std::endl;
 	for (size_t i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 	return ;
@@ -30,7 +29,6 @@ Character::Character(std::string const &name):name(name)
 
 Character::Character(Character const& to_cpy)
 {
-	std::cout << "COPY constructor of Character class called, name: " << to_cpy.name << std::endl;
 	if (this != &to_cpy)
 		*this = to_cpy;
 	return ;
@@ -38,7 +36,6 @@ Character::Character(Character const& to_cpy)
 
 Character::~Character(void)
 {
-	std::cout << "Character class destructor called, bye " << this->name << std::endl;
 	for (size_t i = 0; i < 4; i++)
 	{
 		if (this->inventory[i] != NULL)
@@ -53,10 +50,11 @@ Character			&Character::operator=(Character const &to_cpy)
 	{
 		this->name = to_cpy.name;
 		for (size_t i = 0; i < 4; i++)
-			if (this->inventory[i] != NULL)
+		{
+			if (to_cpy.inventory[i] != NULL)
 				this->inventory[i] = to_cpy.inventory[i]->clone();
+		}
 	}
-	std::cout << "ASSIGNATION constructor of Character class called, name: " << this->name << std::endl;
 	return (*this);
 }
 
@@ -65,8 +63,39 @@ std::string const	&Character::getName(void) const
 	return this->name;
 }
 
-void				Character::use(ICharacter& target)
+void				Character::equip(AMateria *m)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] == NULL)
+		{
+			this->inventory[i] = m;
+			break ;
+		}
+	}
+	return ;
+}
+
+void				Character::unequip(int idx)
+{
+	//std::cout << "une "<< idx << std::endl;
+	if (idx >= 0 && idx < 4)
+	{
+		//std::cout << idx << std::endl;
+		if (this->inventory[idx] != NULL)
+			this->inventory[idx] = NULL;
+	}
+	return ;
+}
+
+void				Character::use(int idx, ICharacter &target)
+{
+	//std::cout << idx << std::endl;
+	if (idx >= 0 && idx < 4)
+	{
+		//std::cout << "use " << idx << std::endl;
+		if (this->inventory[idx] != NULL)
+			this->inventory[idx]->use(target);
+	}
 	return ;
 }
