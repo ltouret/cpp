@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 12:13:24 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 14:19:23 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 # include <iostream>
 # include "Form.hpp"
-
-//class Form;
-
-// why this works like this and not vice versa?
-// meaning include bureaucrat in form and addin form on top of here?
 
 class Bureaucrat
 {
