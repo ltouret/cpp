@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 11:05:05 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 11:17:38 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Bureaucrat::Bureaucrat(std::string const &name, short grade):
 _name(name),
 _grade(grade)
 {
-	//std::cout << grade << " " << _grade << std::endl;
 	if (this->_grade <= 0)
 		throw (GradeTooHighException());
 	if (this->_grade > 150)
