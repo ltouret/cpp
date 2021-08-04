@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 14:08:59 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 14:37:43 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void				Form::beSigned(Bureaucrat const & bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_signGrade)
 		throw (GradeTooLowException());
+	if (this->_isSigned == true)
+		throw (AlreadySignedException());
 	this->_isSigned = true;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 14:09:18 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 14:26:36 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,20 @@ public:
 			return ("Grade too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 	public:
 		virtual const char*		what() const throw(){
 			return ("Grade too low");
+		}
+	};
+
+	class AlreadySignedException : public std::exception
+	{
+	public:
+		virtual const char*		what() const throw(){
+			return ("Form already signed");
 		}
 	};
 };
