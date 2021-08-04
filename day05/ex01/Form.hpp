@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 12:20:03 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 14:09:18 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FORM_HPP
 
 # include <iostream>
-//# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 

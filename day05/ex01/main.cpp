@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:30:24 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 11:07:42 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/04 14:13:51 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,42 @@
 
 int main(void)
 {
-	Bureaucrat*	Gwendo;
-	Bureaucrat*	Lionel;
-	Bureaucrat*	George;
-	Bureaucrat*	Simon;
+	Bureaucrat Joel("Joel", 5);
+	Form*	test;
 
 	try{
-		Gwendo = new Bureaucrat("Gwendolyne", 10);}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
+		test = new Form("test", 151, 151);}
+	catch(const std::exception& e){
+		std::cerr << e.what() << '\n';}
 	try{
-		Lionel = new Bureaucrat("Lionel", 150);}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
+		test = new Form("test", 0, 0);}
+	catch(const std::exception& e){
+		std::cerr << e.what() << '\n';}
 	try{
-		George = new Bureaucrat("George", 0);}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
+		test = new Form("test", 4, 8);}
+	catch(const std::exception& e){
+		std::cerr << e.what() << '\n';}
+
+	std::cout << *test << std::endl;
+
+	Joel.signForm(*test);
 	try{
-		Simon = new Bureaucrat("Simon", 151);}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
+	test->beSigned(Joel);}
+	catch(const std::exception& e){
+		std::cerr << e.what() << '\n';}
 
-	std::cout << *Gwendo << std::endl << *Lionel << std::endl;
+	std::cout << *test << std::endl;
 
+	Joel.upgrade();
+
+	Joel.signForm(*test);
 	try{
-		Gwendo->upgrade();}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
+	test->beSigned(Joel);}
+	catch(const std::exception& e){
+		std::cerr << e.what() << '\n';}
 
-	std::cout << *Gwendo << std::endl;
+	std::cout << *test << std::endl;
 
-	try{
-		Gwendo->downgrade();}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
-
-	std::cout << *Gwendo << std::endl;
-
-	try{
-		Lionel->downgrade();}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
-
-	std::cout << *Lionel << std::endl;
-
-	try{
-		Lionel->upgrade();}
-	catch(std::exception & e){
-		std::cout << e.what() << std::endl;}
-
-	std::cout << *Lionel << std::endl;
-
-	delete Gwendo;
-	delete Lionel;
-
-	return 0;
+	delete test;
+	return (0);
 }
