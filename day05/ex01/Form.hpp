@@ -29,7 +29,7 @@ public:
 	Form(Form const &to_cpy);
 	~Form(void);
 	Form					&operator=(Form const &to_cpy);
-	std::string const		&getName(void) const;
+	std::string const			&getName(void) const;
 	short					getSignGrade(void) const;
 	short					getExecGrade(void) const;
 	bool					getSign(void) const;

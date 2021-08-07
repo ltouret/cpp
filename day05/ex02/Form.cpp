@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/04 14:37:43 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/07 13:53:47 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ Form::~Form(void)
 	return ;
 }
 
-Form			&Form::operator=(Form const &to_cpy)
+Form				&Form::operator=(Form const &to_cpy)
 {
 	if (this != &to_cpy)
 		this->_isSigned = to_cpy._isSigned;
 	return (*this);
 }
 
-std::string const	&Form::getName(void) const
+std::string const		&Form::getName(void) const
 {
 	return (this->_name);
 }

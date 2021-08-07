@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/08/05 17:00:46 by ltouret          ###   ########.fr        #
+#    Updated: 2021/08/07 13:19:15 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL		= /bin/sh
 
 NAME		= ex02
 
-SRCS		= Bureaucrat.cpp Form.cpp main.cpp
+SRCS		= Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

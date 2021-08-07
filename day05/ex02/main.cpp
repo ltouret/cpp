@@ -14,6 +14,7 @@
 
 int main(void)
 {
+	/*
 	Bureaucrat Joel("Joel", 5);
 	Form*	test;
 
@@ -51,5 +52,6 @@ int main(void)
 	std::cout << *test << std::endl;
 
 	delete test;
+	*/
 	return (0);
 }
