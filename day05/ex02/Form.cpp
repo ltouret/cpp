@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/07 13:53:47 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/07 18:16:07 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,16 @@ void				Form::beSigned(Bureaucrat const & bureaucrat)
 	if (this->_isSigned == true)
 		throw (AlreadySignedException());
 	this->_isSigned = true;
+	return ;
+}
+
+
+void				Form::execute(Bureaucrat const & executor) const
+{
+	if (this->_isSigned == false)
+		throw (NotSignedException());
+	if (this->_execGrade < executor.getGrade())
+		throw (GradeTooLowException());
 	return ;
 }
 

@@ -26,11 +26,12 @@ public:
 	Bureaucrat(Bureaucrat const &to_cpy);
 	~Bureaucrat(void);
 	Bureaucrat				&operator=(Bureaucrat const &to_cpy);
-	std::string const		&getName(void) const;
+	std::string const			&getName(void) const;
 	short					getGrade(void) const;
 	void					upgrade(void);
 	void					downgrade(void);
 	void					signForm(Form &f);
+	void					executeForm(Form const & form) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -39,6 +40,7 @@ public:
 			return ("Grade too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 	public:

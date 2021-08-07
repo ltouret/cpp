@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/07 18:19:57 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/07 18:30:46 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include <fstream>
+#include "PresidentialPardonForm.hpp"
+#include <fstream> // erase me
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) :
-Form("shrubbery creation", 145, 137),
+PresidentialPardonForm::PresidentialPardonForm(void) :
+Form("presidential pardon", 25, 5),
 _target("Random")
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
-Form("shrubbery creation", 145, 137),
+PresidentialPardonForm::PresidentialPardonForm(std::string const &target) :
+Form("presidential pardon", 25, 5),
 _target(target)
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &to_cpy):
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &to_cpy):
 Form(to_cpy.getName(), to_cpy.getSignGrade(), to_cpy.getExecGrade()),
 _target(to_cpy._target)
 {
@@ -36,19 +36,20 @@ _target(to_cpy._target)
 	return ;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void)
+PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 	return ;
 }
 
-ShrubberyCreationForm			&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &to_cpy)
+PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &to_cpy)
 {
 	if (this != &to_cpy)
 		this->Form::operator=(to_cpy);
 	return (*this);
 }
 
-void					ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+// change this to the stuff that needs to be done
+void					PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
 	std::string		tmp(this->_target + "_shrubbery");
