@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/09 13:52:14 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/09 14:03:56 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void					RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	srand(time(NULL));
 	bool trueFalse = (rand() % 100) < 50;
 	if (trueFalse)
-		std::cout <<  this->_target << " has been succesfully ROBOTOMIZED !!!" << std::endl;
+		std::cout <<  " has been succesfully ROBOTOMIZED !!!" << std::endl;
 	else
-		std::cout << this->_target << "'s robotomization has failed..." << std::endl;
+		std::cout << "'s robotomization has failed..." << std::endl;
 
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:30:24 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/09 13:44:28 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/09 14:31:28 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,72 +17,34 @@
 
 int main(void)
 {
-	Bureaucrat	Joel("Joel", 1);
-	Form		*test;
+	Bureaucrat bob("Bob", 2);
+	Bureaucrat deustach("Deustach", 149);
+	Bureaucrat marco("Marco", 70);
 
-	for (int i = 0; i < 3; i++)
-	{
-		if (i == 0){
-			std::cout << "---------------------------------------------------------------------" << std::endl
-				<< "PresidentialPardonForm :" << std::endl;
-			test = new PresidentialPardonForm("President");
-		}
-		else if (i == 1){
-			std::cout << "---------------------------------------------------------------------" << std::endl
-				<< "RobotomyRequestForm :" << std::endl;
-			test = new RobotomyRequestForm("Robot");
-		}
-		else{
-			std::cout << "---------------------------------------------------------------------" << std::endl
-				<< "ShrubberyCreationForm :" << std::endl;
-			test = new ShrubberyCreationForm("Tree");
-		}
+	std::cout << std::endl << "== Try to sign form : ==" << std::endl;
+	PresidentialPardonForm pass("Michel");
+	RobotomyRequestForm rob("Flignoti");
+	ShrubberyCreationForm tree("Tree");
+	RobotomyRequestForm notSigned("NotSigned");
 
-		Joel = Bureaucrat("Joel", test->getSignGrade() + 1);
+	deustach.signForm(pass);
+	std::cout << pass;
+	bob.signForm(pass);
+	std::cout << pass;
+	bob.signForm(pass);
+	bob.signForm(rob);
+	marco.signForm(tree);
 
-		for (int j = 0; j < 2; j++)
-		{
+	std::cout << std::endl << "== Try to execute form : ==" << std::endl;
 
-			std::cout << std::endl << std::endl << *test << Joel << std::endl << std::endl;
-
-			Joel.signForm(*test);
-			try
-			{
-				test->beSigned(Joel);
-			}
-			catch(const std::exception & e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-
-			Joel.executeForm(*test);
-			try
-			{
-				test->execute(Joel);
-			}
-			catch(const std::exception & e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-
-			Joel.upgrade();
-
-		}
-
-		Joel = Bureaucrat("Joel", test->getExecGrade());
-		std::cout << std::endl << std::endl << *test << Joel << std::endl << std::endl;
-
-		Joel.executeForm(*test);
-		try
-		{
-			test->execute(Joel);
-		}
-		catch(const std::exception & e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-
-		delete test;
-	}
+	// uncomment to check exceptions
+	pass.execute(bob);
+	//pass.execute(deustach);
+	rob.execute(bob);
+	rob.execute(bob);
+	marco.executeForm(tree);
+	marco.executeForm(tree);
+	//marco.executeForm(notSigned);
+	//notSigned.execute(marco);
 	return (0);
 }
