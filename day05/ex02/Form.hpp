@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/07 13:08:56 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/09 13:45:28 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 public:
 	Form(std::string const &_name, short const _signGrade, short const _execGrade);
 	Form(Form const &to_cpy);
-	~Form(void);
+	virtual ~Form(void);
 	Form					&operator=(Form const &to_cpy);
 	std::string const			&getName(void) const;
 	short					getSignGrade(void) const;

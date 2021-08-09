@@ -6,12 +6,12 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/07 18:31:16 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/09 13:52:14 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include <fstream> // erase me
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm(void) :
 Form("robotomy request", 72, 45),
@@ -48,37 +48,16 @@ RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const 
 	return (*this);
 }
 
-// change this to the stuff that needs to be done
 void					RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
-	std::string		tmp(this->_target + "_shrubbery");
-	std::ofstream		os(tmp.c_str());
+	std::cout << "* Some drill noise *" << std::endl << "<" << this->_target << ">";
+	srand(time(NULL));
+	bool trueFalse = (rand() % 100) < 50;
+	if (trueFalse)
+		std::cout <<  this->_target << " has been succesfully ROBOTOMIZED !!!" << std::endl;
+	else
+		std::cout << this->_target << "'s robotomization has failed..." << std::endl;
 
-	os << 
-		"             .o00o" << std::endl
-		<< "           o000000oo" << std::endl
-		<< "           o000000oo" << std::endl
-		<< "          00000000000o" << std::endl
-		<< "         00000000000000" << std::endl
-		<< "      oooooo  00000000  o88o" << std::endl
-		<< "   ooOOOOOOOoo  ```''  888888" << std::endl
-		<< " OOOOOOOOOOOO'.qQQQQq. `8888'" << std::endl
-		<< "oOOOOOOOOOO'.QQQQLQQQQQ/.88'" << std::endl
-		<< "OOOOOOOOOO'.QQQQLTLQQQ/ /q" << std::endl
-		<< " OOOOOOOOO QQQQQQLQQQ/ /QQ" << std::endl
-		<< "   OOOOOOOOO `QQQQQQ/ /QQ'" << std::endl
-		<< "     OO:F_P:O `QQQ/  /Q'" << std::endl
-		<< "        \\\\. \\ |  // |" << std::endl
-		<< "        d\\ \\\\\\|_////" << std::endl
-		<< "        qP| \\ _' `|Ob" << std::endl
-		<< "           \\  / \\  \\Op" << std::endl
-		<< "           |  | O| |" << std::endl
-		<< "   _       /\\. \\_/ /\\" << std::endl
-		<< "    `---__/|_\\   //|  __" << std::endl
-		<< "          `-'  `-'`-'-'"
-	<< std::endl;
-
-	os.close();
 	return ;
 }
