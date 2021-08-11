@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 21:49:02 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/11 23:34:54 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ int	main(int argc, char *argv[])
 	}
 	*/
 	//std::cout << test << " " << (isprint(static_cast<char>(argv[1][0]))  == false) << " " <<(static_cast<char>('1')) << std::endl;
+	//std::cout << ((static_cast<int>(argv[1][0]))) << std::endl;
 	//std::cout << isprint(static_cast<char>('1')) << std::endl;
 	//std::cout << "str: " << argv[1] << " double: " << test << std::endl;
 	me.convertChar();
+	me.convertInt();
 	return (0);
 }

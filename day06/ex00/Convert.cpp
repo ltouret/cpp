@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 21:46:10 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/11 23:34:44 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ void			Convert::convertChar(void)
 
 	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan" || inp == "inff" || inp == "-inff" || inp == "+inff" || inp == "nanf")
 		std::cout << "impossible" << std::endl;
-	else if (inp.length() == 1 && isdigit(inp.c_str()[0]) == false)
+	else if (inp.length() == 1 && isdigit(inp[0]) == false)
 	{
 		if (isprint(inp[0]) == false)
 			std::cout << "Non displayable" << std::endl;
@@ -165,14 +165,35 @@ void			Convert::convertChar(void)
 	else
 	{
 		double inpResult = strtod(inp.c_str(), NULL);
-		//std::cout << inpResult << (static_cast<int>(static_cast<char>(inpResult))) <<std::endl;
-		if ((errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL)) \
-		|| inpResult > 127 || inpResult < 0)
+		if ((errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL))
+			|| inpResult > 127 || inpResult < 0)
 			std::cout << "impossible" << std::endl;
 		else if (isprint(static_cast<char>(inpResult)) == false)
 			std::cout << "Non displayable" << std::endl;
 		else
 			std::cout << static_cast<char>(inpResult) << std::endl;
+	}
+	return ;
+}
+
+void			Convert::convertInt(void)
+{
+	std::string	inp = this->_input;
+	std::cout << "int: ";
+
+	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan" || inp == "inff" || inp == "-inff" || inp == "+inff" || inp == "nanf")
+		std::cout << "impossible" << std::endl;
+	else if (inp.length() == 1 && isdigit(inp[0]) == false)
+		std::cout << static_cast<int>(inp[0]) << std::endl;
+	else
+	{
+		double inpResult = strtod(inp.c_str(), NULL);
+		if ((errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL))
+			|| inpResult > std::numeric_limits<int>::max() ||
+				inpResult < std::numeric_limits<int>::min())
+			std::cout << "impossible" << std::endl;
+		else
+			std::cout << static_cast<int>(inpResult) << std::endl;
 	}
 	return ;
 }

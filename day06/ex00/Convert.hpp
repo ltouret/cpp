@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 21:06:42 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/11 23:37:35 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,26 @@
 # include <ctype.h>
 # include <cerrno>
 # include <cmath>
+# include <limits>
+
+// add const to most of funcs
+// the print of char: int: get it out of convert func
+// add convertType that wraps all the convert and get them in private + receive print int:
 
 class Convert
 {
 private:
-	std::string				_input;
+	std::string			_input;
+	bool				checkChar(void);
+	bool				checkInt(void);
+	bool				checkFloat(void);
+	bool				checkDouble(void);
 public:
 	Convert(void);
 	Convert(std::string input);
 	Convert(Convert const &to_cpy);
 	~Convert(void);
 	Convert				&operator=(Convert const &to_cpy);
-	bool				checkChar(void);
-	bool				checkInt(void);
-	bool				checkFloat(void);
-	bool				checkDouble(void);
 	bool				checkType(void);
 	void				convertChar(void);
 	void				convertInt(void);
