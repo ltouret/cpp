@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 13:14:21 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/11 21:06:42 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <iostream>
 # include <stdlib.h>
 # include <ctype.h>
-
+# include <cerrno>
+# include <cmath>
 
 class Convert
 {
@@ -33,6 +34,11 @@ public:
 	bool				checkFloat(void);
 	bool				checkDouble(void);
 	bool				checkType(void);
+	void				convertChar(void);
+	void				convertInt(void);
+	void				convertFloat(void);
+	void				convertDouble(void);
+	void				convertType(void);
 };
 
 #endif

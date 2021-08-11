@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 13:39:10 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/11 21:46:10 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Convert			&Convert::operator=(Convert const &to_cpy)
 	return (*this);
 }
 
+	// ---- Check ---- //
+
 bool			Convert::checkChar(void)
 {
 	std::string	inp = this->_input;
@@ -49,7 +51,10 @@ bool			Convert::checkChar(void)
 	if (inp.length() == 1)
 	{
 		if (isprint(inp[0]) == false)
+		{
+			std::cout << "non-displayable char, undefined behavior." << std::endl;
 			return (false);
+		}
 		else
 			return (true);
 	}
@@ -112,7 +117,7 @@ bool			Convert::checkDouble(void)
 	size_t		i = 0;
 	bool		hasDot = false;
 
-	if (inp == "inf" || inp == "-inff" || inp == "+inff" || inp == "nanf")
+	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan")
 		return (true);
 
 	if (inp[i] == '+' || inp[i] == '-')
@@ -139,4 +144,35 @@ bool			Convert::checkType(void)
 		return (false);
 	else
 		return (true);
+}
+
+	// ---- Convert ---- //
+	
+void			Convert::convertChar(void)
+{
+	std::string	inp = this->_input;
+	std::cout << "char: ";
+
+	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan" || inp == "inff" || inp == "-inff" || inp == "+inff" || inp == "nanf")
+		std::cout << "impossible" << std::endl;
+	else if (inp.length() == 1 && isdigit(inp.c_str()[0]) == false)
+	{
+		if (isprint(inp[0]) == false)
+			std::cout << "Non displayable" << std::endl;
+		else
+			std::cout << static_cast<char>(inp[0]) << std::endl;
+	}
+	else
+	{
+		double inpResult = strtod(inp.c_str(), NULL);
+		//std::cout << inpResult << (static_cast<int>(static_cast<char>(inpResult))) <<std::endl;
+		if ((errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL)) \
+		|| inpResult > 127 || inpResult < 0)
+			std::cout << "impossible" << std::endl;
+		else if (isprint(static_cast<char>(inpResult)) == false)
+			std::cout << "Non displayable" << std::endl;
+		else
+			std::cout << static_cast<char>(inpResult) << std::endl;
+	}
+	return ;
 }
