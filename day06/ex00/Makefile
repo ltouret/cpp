@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/08/09 19:25:37 by ltouret          ###   ########.fr        #
+#    Updated: 2021/08/11 12:16:24 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL		= /bin/sh
 
 NAME		= convert
 
-SRCS		= main.cpp
+SRCS		= Convert.cpp main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
