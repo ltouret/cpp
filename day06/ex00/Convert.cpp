@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 23:34:44 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/12 17:59:50 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ bool			Convert::checkType(void)
 		return (true);
 }
 
-	// ---- Convert ---- //
-	
+	// ---- Convert ---- //	
+
 void			Convert::convertChar(void)
 {
 	std::string	inp = this->_input;
@@ -194,6 +194,51 @@ void			Convert::convertInt(void)
 			std::cout << "impossible" << std::endl;
 		else
 			std::cout << static_cast<int>(inpResult) << std::endl;
+	}
+	return ;
+}
+
+void			Convert::convertFloat(void)
+{
+	std::string	inp = this->_input;
+	std::cout << "float: ";
+
+	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan")
+		std::cout << inp << "f" << std::endl;
+	else if (inp == "inff" || inp == "-inff" || inp == "+inff" || inp == "nanf")
+		std::cout << inp << std::endl;
+	else if (inp.length() == 1 && isdigit(inp[0]) == false)
+		std::cout << std::setprecision(1) << std::fixed << static_cast<float>(inp[0]) << "f" << std::endl;
+	else
+	{
+		double inpResult = strtod(inp.c_str(), NULL);
+		if ((errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL))
+			&& inpResult > FLT_MAX && inpResult < FLT_MIN)
+			std::cout << "impossible" << std::endl;	
+		else
+			std::cout << std::setprecision(1) << std::fixed << static_cast<float>(inpResult) << "f" << std::endl;
+	}
+	return ;
+}
+
+void			Convert::convertDouble(void)
+{
+	std::string	inp = this->_input;
+	std::cout << "double: ";
+
+	if (inp == "inf" || inp == "-inf" || inp == "+inf" || inp == "nan")
+		std::cout << inp << std::endl;
+	else if (inp == "inff" || inp == "-inff" || inp == "+inff" || inp == "nanf")
+		std::cout << inp.substr(0, inp.length() - 1) << std::endl;
+	else if (inp.length() == 1 && isdigit(inp[0]) == false)
+		std::cout << std::setprecision(1) << std::fixed << static_cast<double>(inp[0]) << std::endl;
+	else
+	{
+		double inpResult = strtod(inp.c_str(), NULL);
+		if (errno == ERANGE && (inpResult == -HUGE_VAL || inpResult == HUGE_VAL))
+			std::cout << "impossible" << std::endl;
+		else
+			std::cout << std::setprecision(1) << std::fixed << static_cast<double>(inpResult) << std::endl;
 	}
 	return ;
 }

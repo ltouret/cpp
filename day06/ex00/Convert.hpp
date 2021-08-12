@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 23:37:35 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/12 18:00:01 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <cerrno>
 # include <cmath>
 # include <limits>
+# include <iomanip>
+# include <cfloat>
 
 // add const to most of funcs
 // the print of char: int: get it out of convert func
@@ -43,7 +45,6 @@ public:
 	void				convertInt(void);
 	void				convertFloat(void);
 	void				convertDouble(void);
-	void				convertType(void);
 };
 
 #endif

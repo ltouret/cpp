@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/11 23:34:54 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/12 17:59:54 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,15 @@ int	main(int argc, char *argv[])
 	//std::cout << "str: " << argv[1] << " double: " << test << std::endl;
 	me.convertChar();
 	me.convertInt();
+	me.convertFloat();
+	me.convertDouble();
+	/*
+	for (float i = 2147000000; i < 2147483648 ; i++)
+	{
+	//	double inpResult = 2147483647;
+		std::cout << std::setprecision(1) << std::fixed << static_cast<float>(i) << std::endl;
+	}
+	*/
+	//std::cout << std::setprecision(1) << std::fixed << static_cast<float>(2147483640.0f) << std::endl;
 	return (0);
 }
