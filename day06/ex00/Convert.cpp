@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/12 17:59:50 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/13 19:46:50 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ Convert::~Convert(void)
 Convert			&Convert::operator=(Convert const &to_cpy)
 {
 	if (this != &to_cpy)
-		this->_input= to_cpy._input;
+		this->_input = to_cpy._input;
 	return (*this);
 }
 
 	// ---- Check ---- //
 
-bool			Convert::checkChar(void)
+bool			Convert::checkChar(void) const
 {
 	std::string	inp = this->_input;
 
@@ -61,7 +61,7 @@ bool			Convert::checkChar(void)
 	return (false);
 }
 
-bool			Convert::checkInt(void)
+bool			Convert::checkInt(void) const
 {
 	std::string	inp = this->_input;
 	size_t		i = 0;
@@ -77,7 +77,7 @@ bool			Convert::checkInt(void)
 	return (true);
 }
 
-bool			Convert::checkFloat(void)
+bool			Convert::checkFloat(void) const
 {
 	std::string	inp = this->_input;
 	size_t		i = 0;
@@ -111,7 +111,7 @@ bool			Convert::checkFloat(void)
 	return (true);
 }
 
-bool			Convert::checkDouble(void)
+bool			Convert::checkDouble(void) const
 {
 	std::string	inp = this->_input;
 	size_t		i = 0;
@@ -137,7 +137,7 @@ bool			Convert::checkDouble(void)
 	return (true);
 }
 
-bool			Convert::checkType(void)
+bool			Convert::checkType(void) const
 {
 	if (this->checkChar() == false && this->checkInt() == false &&
 		this->checkFloat() == false && this->checkDouble() == false)
@@ -148,7 +148,7 @@ bool			Convert::checkType(void)
 
 	// ---- Convert ---- //	
 
-void			Convert::convertChar(void)
+void			Convert::convertChar(void) const
 {
 	std::string	inp = this->_input;
 	std::cout << "char: ";
@@ -176,7 +176,7 @@ void			Convert::convertChar(void)
 	return ;
 }
 
-void			Convert::convertInt(void)
+void			Convert::convertInt(void) const
 {
 	std::string	inp = this->_input;
 	std::cout << "int: ";
@@ -198,7 +198,7 @@ void			Convert::convertInt(void)
 	return ;
 }
 
-void			Convert::convertFloat(void)
+void			Convert::convertFloat(void) const
 {
 	std::string	inp = this->_input;
 	std::cout << "float: ";
@@ -221,7 +221,7 @@ void			Convert::convertFloat(void)
 	return ;
 }
 
-void			Convert::convertDouble(void)
+void			Convert::convertDouble(void) const
 {
 	std::string	inp = this->_input;
 	std::cout << "double: ";

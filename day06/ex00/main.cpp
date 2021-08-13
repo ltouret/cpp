@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/12 17:59:54 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/12 18:03:38 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,39 +28,9 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 
-	//double test = strtod(argv[1], NULL);
-	//std::cout << (argv[1]) << std::endl;
-	//std::cout << isdigit('a') << std::endl;
-	/*
-	for (size_t i = 0; i < 128; i++)
-	{
-		std::string hey(1, static_cast<char>(i));
-		std::cout << i << " ";
-		Convert mme(hey);
-		//if (mme.checkType() == false)
-		//{
-		//	std::cout << "Wrong type of argument" << std::endl << "Usage: ./convert 'char, int, float, double arg'" << std::endl;
-		//	return (1);
-		//}
-		mme.convertChar();
-		//std::cout << static_cast<char>(i) << " " << i << std::endl;
-	}
-	*/
-	//std::cout << test << " " << (isprint(static_cast<char>(argv[1][0]))  == false) << " " <<(static_cast<char>('1')) << std::endl;
-	//std::cout << ((static_cast<int>(argv[1][0]))) << std::endl;
-	//std::cout << isprint(static_cast<char>('1')) << std::endl;
-	//std::cout << "str: " << argv[1] << " double: " << test << std::endl;
 	me.convertChar();
 	me.convertInt();
 	me.convertFloat();
 	me.convertDouble();
-	/*
-	for (float i = 2147000000; i < 2147483648 ; i++)
-	{
-	//	double inpResult = 2147483647;
-		std::cout << std::setprecision(1) << std::fixed << static_cast<float>(i) << std::endl;
-	}
-	*/
-	//std::cout << std::setprecision(1) << std::fixed << static_cast<float>(2147483640.0f) << std::endl;
 	return (0);
 }

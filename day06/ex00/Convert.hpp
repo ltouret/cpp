@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/12 18:00:01 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/13 19:47:25 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,25 @@
 # include <iomanip>
 # include <cfloat>
 
-// add const to most of funcs
-// the print of char: int: get it out of convert func
-// add convertType that wraps all the convert and get them in private + receive print int:
-
 class Convert
 {
 private:
 	std::string			_input;
-	bool				checkChar(void);
-	bool				checkInt(void);
-	bool				checkFloat(void);
-	bool				checkDouble(void);
+	bool				checkChar(void) const;
+	bool				checkInt(void) const;
+	bool				checkFloat(void) const;
+	bool				checkDouble(void) const;
 public:
 	Convert(void);
 	Convert(std::string input);
 	Convert(Convert const &to_cpy);
 	~Convert(void);
 	Convert				&operator=(Convert const &to_cpy);
-	bool				checkType(void);
-	void				convertChar(void);
-	void				convertInt(void);
-	void				convertFloat(void);
-	void				convertDouble(void);
+	bool				checkType(void) const;
+	void				convertChar(void) const;
+	void				convertInt(void) const;
+	void				convertFloat(void) const;
+	void				convertDouble(void) const;
 };
 
 #endif
