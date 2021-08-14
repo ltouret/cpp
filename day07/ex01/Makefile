@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/21 14:41:56 by ltouret           #+#    #+#              #
-#    Updated: 2021/08/13 23:48:07 by ltouret          ###   ########.fr        #
+#    Updated: 2021/08/14 23:39:45 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 SHELL		= /bin/sh
 
-NAME		= ex00
+NAME		= ex01
 
 SRCS		= main.cpp
 
