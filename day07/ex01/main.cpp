@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/14 21:06:04 by ltouret          ###   ########.fr       */
+/*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/14 23:37:05 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
-
-# include <iostream>
+#include "iter.hpp"
 
 template<typename T>
-void	swap(T &x, T &y)
+void	show(T &x)
 {
-	T tmp = x;
-	x = y;
-	y = tmp;
+	std::cout << x << std::endl;
 	return ;
 }
 
-template<typename T>
-T	min(T const &x, T const &y)
+int		main(void)
 {
-	return (x >= y) ? y : x;
-}
+	int		a[4] = {0,1,2,3};
+	char		b[6] = "43210";
+	std::string	c[4] = {"how", "are", "you", "?"};
 
-template<typename T>
-T	max(T const &x, T const &y)
-{
-	return (x <= y) ? y : x;
-}
+	std::cout << "A: " << std::endl;
+	iter(a, 4, show);
 
-#endif
+	std::cout << "B: " << std::endl;
+	iter(b, 6, show);
+
+	std::cout << "C: " << std::endl;
+	iter(c, 4, show);
+	return (0);
+}
