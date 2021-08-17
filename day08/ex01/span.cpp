@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/16 23:21:38 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/17 18:03:57 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Span::Span(void)
 Span::Span(unsigned int N):
 _N(N)
 {
-	//this->_s = new std::set<int>;
 	return ;
 }
 
@@ -33,40 +32,61 @@ Span::Span(Span const& to_cpy)
 
 Span::~Span(void)
 {
-	//delete [] this->_s;
 	return ;
 }
 
 Span			&Span::operator=(Span const &to_cpy)
 {
 	if (this != &to_cpy)
+	{
+		this->_V = to_cpy._V;
 		this->_N = to_cpy._N;
+	}
 	return (*this);
-}
-
-int				Span::getSize(void)
-{
-	//std::cout << this->_s.max_size() << std::endl;
-	return (this->_s.size());
 }
 
 void			Span::addNumber(int num)
 {
-	if (this->_s.size() >= this->_N)
-		return ; // exception here!
-	this->_s.insert(num);
+	if (this->_V.size() >= this->_N)
+		throw (tooManyNumbers());
+	this->_V.push_back(num);
 	return ;
 }
 
 int				Span::shortestSpan(void)
 {
-	// What in case of N < 2
-	//std::set<int>::iterator it;
-	//it = this->_s.begin();
-	int first = *this->_s.begin();
-	//std::cout << *it << std::endl; 
-	//advance(it, 1);
-	int second = *it;
-	//std::cout << *it << std::endl; 
-	return (second - first);
+	if (this->_V.size() < 2)
+		throw (noSpanFound());
+
+	std::sort(this->_V.begin(), this->_V.end());
+	int		min = this->_V[0];
+	int		max = this->_V[1];
+	return (max - min);
+}
+
+int				Span::longestSpan(void)
+{
+	if (this->_V.size() < 2)
+		throw (noSpanFound());
+
+	int		min = *std::min_element(this->_V.begin(), this->_V.end());
+	int		max = *std::max_element(this->_V.begin(), this->_V.end());
+	return (max - min);
+}
+
+void			Span::rangeV(unsigned int N)
+{
+	srand(time(NULL));
+
+	for (unsigned int i = 0; i < N; i++)
+		this->addNumber(rand() % 50);
+	return ;
+}
+
+void			Span::show(void)
+{
+	for (std::vector<int>::const_iterator i = this->_V.begin(); i != this->_V.end(); ++i)
+		std::cout << *i << " ";
+	std::cout << std::endl;
+	return ;
 }
