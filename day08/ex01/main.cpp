@@ -6,12 +6,11 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/17 18:05:42 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/17 18:08:40 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
-#include <climits>
 
 int		main(void)
 {
