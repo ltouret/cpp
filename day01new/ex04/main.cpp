@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:38:58 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/28 13:21:32 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/28 21:24:25 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int		open_file(std::ifstream &input, std::ofstream &output, char *argv[])
 
 void	replace(std::ifstream &input, std::ofstream &output, std::string s1, std::string s2)
 {
-	size_t				next;
 	std::stringstream	buf;
 	std::string			text;
 
@@ -61,7 +60,7 @@ void	replace(std::ifstream &input, std::ofstream &output, std::string s1, std::s
 	text = buf.str();
 	if (s1 != s2)
 	{
-		while ((next = text.find(s1)) != std::string::npos)
+		for (size_t next = text.find(s1); next != std::string::npos; next = text.find(s1, next + s2.length()))
 		{
 			text.erase(next, s1.length());
 			text.insert(next, s2);
