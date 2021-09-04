@@ -5,40 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:37:01 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/20 22:29:17 by ltouret           #+#    #+#             */
+/*   Updated: 2021/06/27 18:47:08 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include <iostream>
+#include "Fixed.hpp"
 
-template<typename T>
-void	show(T &x)
+int	main(void)
 {
-	std::cout << x << std::endl;
-	return ;
-}
-
-int		main(void)
-{
-	int					a[4] = {0,1,2,3};
-	char				b[6] = "43210";
-	std::string			c[4] = {"how", "are", "you", "?"};
-	const std::string	d[4] = {"I", "am", "fine", "!"};
-
-	std::cout << "A:" << std::endl;
-	iter(a, 4, show);
-	std::cout << std::endl;
-
-	std::cout << "B:" << std::endl;
-	iter(b, 6, show);
-	std::cout << std::endl;
-
-	std::cout << "C:" << std::endl;
-	iter(c, 4, show);
-	std::cout << std::endl;
-
-	std::cout << "D:" << std::endl;
-	iter(d, 4, show);
+	Fixed		a;
+	Fixed const	b(10);
+	Fixed const	c(42.42f);
+	Fixed const	d(b);
+	a = Fixed(1234.4321f);
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return (0);
 }
