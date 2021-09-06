@@ -6,13 +6,14 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/17 18:03:57 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/06 13:06:41 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span(void)
+Span::Span(void):
+_N(0)
 {
 	return ;
 }
