@@ -5,40 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:37:01 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/07 18:38:58 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 21:09:51 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-
-template<typename T>
-void	show(T &x)
-{
-	std::cout << x << std::endl;
-	return ;
-}
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int		main(void)
 {
-	int					a[4] = {0,1,2,3};
-	char				b[6] = "43210";
-	std::string			c[4] = {"how", "are", "you", "?"};
-	const std::string	d[4] = {"I", "am", "fine", "!"};
-
-	std::cout << "A:" << std::endl;
-	iter(a, 4, show);
-	std::cout << std::endl;
-
-	std::cout << "B:" << std::endl;
-	iter(b, 6, show);
-	std::cout << std::endl;
-
-	std::cout << "C:" << std::endl;
-	iter(c, 4, show);
-	std::cout << std::endl;
-
-	std::cout << "D:" << std::endl;
-	iter(d, 4, show);
-	return (0);
+	// Mandatory test
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	// Custom test
+	{
+		HumanB jim("Jim");
+		jim.attack();
+	}
 }

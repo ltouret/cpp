@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 19:47:06 by ltouret           #+#    #+#             */
-/*   Updated: 2021/02/21 14:20:25 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/08/19 19:38:14 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int		main(int argc, char *argv[])
 		}
 		std::cout << std::endl;
 	}
-	return 0;
+	return (0);
 }

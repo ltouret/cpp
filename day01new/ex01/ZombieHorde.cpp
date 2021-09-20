@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/05 17:15:12 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 19:38:43 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include <iostream>
+#include "Zombie.hpp"
 
-# include <iostream>
-
-template<typename T, typename U>
-void	iter(T *x, U y, void f(T &z))
+Zombie	*zombieHorde(int N, std::string name)
 {
-	for (int i = 0; i < y; i++)
-		f(x[i]);
-	return ;
-}
+	if (N < 1)
+		return (NULL);
 
-#endif
+	Zombie *horde = new Zombie[N]();
+	for (int i = 0; i < N; i++)
+		horde[i].setName(name);
+	return horde;
+}

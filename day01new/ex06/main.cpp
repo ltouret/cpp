@@ -5,40 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:37:01 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/07 18:38:58 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/28 19:01:43 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Karen.hpp"
 
-template<typename T>
-void	show(T &x)
+int		main(int argc, char *argv[])
 {
-	std::cout << x << std::endl;
-	return ;
-}
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./Karen-filter 'Arg'" << std::endl;
+		return 0;
+	}
 
-int		main(void)
-{
-	int					a[4] = {0,1,2,3};
-	char				b[6] = "43210";
-	std::string			c[4] = {"how", "are", "you", "?"};
-	const std::string	d[4] = {"I", "am", "fine", "!"};
+	Karen		Karen;
+	int			i = 0;
+	std::string	level = argv[1];
+	std::string	tab[4] ={"DEBUG","INFO","WARNING","ERROR"};
 
-	std::cout << "A:" << std::endl;
-	iter(a, 4, show);
-	std::cout << std::endl;
+	while (i < 4)
+	{
+		if (level == tab[i])
+			break;
+		i++;
+	}
 
-	std::cout << "B:" << std::endl;
-	iter(b, 6, show);
-	std::cout << std::endl;
-
-	std::cout << "C:" << std::endl;
-	iter(c, 4, show);
-	std::cout << std::endl;
-
-	std::cout << "D:" << std::endl;
-	iter(d, 4, show);
-	return (0);
+	switch (i)
+	{
+		case 0 :
+			Karen.complain("DEBUG");
+		case 1 :
+			Karen.complain("INFO");
+		case 2 :
+			Karen.complain("WARNING");
+		case 3 :
+			Karen.complain("ERROR");
+			break;
+		default:
+			Karen.complain("UNKNOWN");
+	}
+	return 0;
 }

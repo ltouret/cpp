@@ -6,13 +6,18 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:28:39 by ltouret           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2021/09/20 21:51:18 by ltouret          ###   ########.fr       */
+=======
+/*   Updated: 2021/09/06 13:06:41 by ltouret          ###   ########.fr       */
+>>>>>>> d2f1dedf46309e2d0e05fd4ed7fb25f124fdf058
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span(void)
+Span::Span(void):
+_N(0)
 {
 	return ;
 }

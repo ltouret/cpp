@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/07 18:50:20 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 20:55:29 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include <iostream>
+# include "Weapon.hpp" 
 
-template<typename T, typename U>
-void	iter(T *x, U y, void f(T &z))
+class HumanB
 {
-	for (int i = 0; i < y; i++)
-		f(x[i]);
-	return ;
-}
+	private:
+		std::string	name;
+		Weapon		*weap;
+	public:
+		HumanB(std::string name);
+		~HumanB(void);
+		void		setWeapon(Weapon &weap);
+		void		attack(void) const;
+};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/15 19:56:57 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/04 20:35:57 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Array
 {
 private:
 	unsigned int		_size;
-	T			*_array;
+	T					*_array;
 
 public:
-	Array(void): _size(0), _array(new T[0]) {}
+	Array(void): _size(0), _array(NULL) {}
 	Array(unsigned int size): _size(size), _array(new T[size]) {}
 
 	Array(Array const &to_cpy)

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/07 18:34:46 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 21:06:52 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include "Weapon.hpp"
 
-# include <iostream>
-
-template<typename T, typename U>
-void	iter(T *x, U y, void f(T &z))
+Weapon::Weapon(std::string type) : type(type)
 {
-	for (int i = 0; i < y; i++)
-		f(x[i]);
 	return ;
 }
 
-#endif
+Weapon::~Weapon(void)
+{
+	return ;
+}
+
+const std::string	&Weapon::getType(void) const
+{
+	return (this->type);
+}
+
+void				Weapon::setType(std::string type)
+{
+	this->type = type;
+	return ;
+}

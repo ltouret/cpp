@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/05 17:15:12 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 19:13:00 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include <iostream>
+#include "Zombie.hpp"
 
-# include <iostream>
-
-template<typename T, typename U>
-void	iter(T *x, U y, void f(T &z))
+Zombie::Zombie(std::string name)
 {
-	for (int i = 0; i < y; i++)
-		f(x[i]);
+	this->name = name;
+	std::cout << this->name << " is alive!" << std::endl;
 	return ;
 }
 
-#endif
+Zombie::~Zombie(void)
+{
+	std::cout << this->name << " died (again)!" << std::endl;
+	return ;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+	return ;
+}

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/09/04 19:35:13 by ltouret          ###   ########.fr       */
+/*   Created: 2021/06/05 17:25:52 by ltouret           #+#    #+#             */
+/*   Updated: 2021/08/27 19:14:19 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include <iostream>
+#include "Zombie.hpp"
 
-# include <iostream>
-
-template<typename T, typename U>
-void	iter(T *x, U y, void f(T &z))
+int		main(void)
 {
-	for (int i = 0; i < y; i++)
-		f(x[i]);
-	return ;
-}
 
-#endif
+	Zombie*	ben;
+
+	randomChump("Bob - stack zombie");
+
+	ben = newZombie("Ben - heap zombie");
+	ben->announce();
+	delete ben;
+
+	return (0);
+}
