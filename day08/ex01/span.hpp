@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 22:26:07 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/17 18:04:15 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/20 21:18:46 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPAN_HPP
 
 # include <algorithm> 
+# include <iterator>
 # include <iostream>
 # include <vector>
 
@@ -51,7 +52,7 @@ class Span
 			void			addNumber(int num);
 			int				shortestSpan(void);
 			int				longestSpan(void);
-			void			rangeV(unsigned int N);
+			void			rangeV(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 			void			show(void);
 };
 
