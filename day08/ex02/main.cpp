@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:13:49 by ltouret           #+#    #+#             */
-/*   Updated: 2021/08/18 13:46:56 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/09/21 01:32:35 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,19 @@ int		main(void)
 
 	std::stack<int> s(mstack);
 
-	std::cout << "Copy size: " << s.size() << std::endl;
-	std::cout << "Original size: "<< mstack.size() << std::endl;
-	std::cout << "Last elemented inserted in stack: " << s.top() << std::endl;
-	s.pop();
-	std::cout << "Last elemented inserted in stack: " << s.top() << std::endl;
+	std::cout << "copy size: " << s.size() << std::endl;
+	std::cout << "original size: "<< mstack.size() << std::endl;
+
+	MutantStack<int>::reverse_iterator it_reverse = mstack.rbegin();
+	MutantStack<int>::reverse_iterator ite_reverse = mstack.rend();
+
+	// changing 0 (last elem) to 777
+	*it_reverse = 777;
+
+	while(it_reverse != ite_reverse)
+	{
+		std::cout << *it_reverse << std::endl;
+		++it_reverse;
+	}
 	return (0);
 }
